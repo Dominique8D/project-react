@@ -1,8 +1,8 @@
 {
   "name": "codespaces-react",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "./",
+  "private": true,
+  "homepage": "https://dominique8d.github.io/project-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
