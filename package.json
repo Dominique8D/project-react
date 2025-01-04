@@ -9,7 +9,12 @@
     "@testing-library/user-event": "^14.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "web-vitals": "^3.1.0"
+    "web-vitals": "^3.1.0",
+    "react-router-dom": "^7.1.1",
+    "@mui/material": "^6.3.1",
+    "@mui/icons-material": "^6.3.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0"
   },
   "overrides": {
     "@svgr/webpack": "^8.0.1",
@@ -47,7 +52,6 @@
     "vitest": "^0.34.6",
     "typescript": "^5.0.0",
     "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "react-router-dom": "^7.1.1"
+    "@types/react-dom": "^18.0.0"
   }
 }

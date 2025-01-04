@@ -7,11 +7,13 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import LoginFormPage from './pages/Login';
 import Page404 from './pages/Page404';
+import { Button } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <Navbar />
+    <Button variant="contained">Test</Button>
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />}></Route>
