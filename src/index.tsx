@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import LoginFormPage from './pages/Login';
+import Page404 from './pages/Page404';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -15,6 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/login" element={<LoginFormPage />}></Route>
+        <Route path="*" element={<Page404 />}></Route>
       </Routes>
     </HashRouter>
   </React.StrictMode>
