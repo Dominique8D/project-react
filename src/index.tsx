@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/NavBar';
+import LoginFormPage from './pages/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <Navbar />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/login" element={<LoginFormPage />}></Route>
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
 

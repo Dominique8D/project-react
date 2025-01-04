@@ -1,5 +1,6 @@
 {
   "name": "codespaces-react",
+  "homepage": "https://dominique8d.github.io/project-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,6 +47,7 @@
     "vitest": "^0.34.6",
     "typescript": "^5.0.0",
     "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0"
+    "@types/react-dom": "^18.0.0",
+    "react-router-dom": "^7.1.1"
   }
 }
