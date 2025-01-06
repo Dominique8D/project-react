@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="name.png" className="App-logo" alt="logo" width={400}
+        <img src="site-logo.png" className="App-logo" alt="logo"
         />
         <p>
           {custTitle}
