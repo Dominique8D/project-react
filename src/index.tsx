@@ -4,20 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/NavBar';
-import LoginFormPage from './pages/Login';
-import Page404 from './pages/Page404';
-import { Button } from '@mui/material';
+import Page404 from './pages/page-404';
+import AppHeader from './components/app-header';
+import AboutPage from './pages/about';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <Button variant="contained">Test</Button>
+    <AppHeader />
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/login" element={<LoginFormPage />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
     </HashRouter>
