@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from "react";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { Stack } from '@mui/material';
+import { useLanguage } from "../context/language-context";
 
 // Thanks SimplyLocalize
 // https://simplelocalize.io/blog/posts/hosted-flag-icons/
@@ -24,11 +25,11 @@ const AppHeaderLangSelector = () => {
     setAnchorEl(null);
   };
 
-  const [lang, setLang] = React.useState("nl");
-  const flagUrl = `https://cdn.simplelocalize.io/public/v1/flags/${lang}.svg`;
+  const { language, setLanguage } = useLanguage();
+  const flagUrl = `https://cdn.simplelocalize.io/public/v1/flags/${language}.svg`;
 
   const handleLangChange = (selectedLang: string) => {
-    setLang(selectedLang);
+    setLanguage(selectedLang);
     handleClose();
   };
 
@@ -47,7 +48,7 @@ const AppHeaderLangSelector = () => {
             <Avatar sx={{ width: FLAG_SIZE, height: FLAG_SIZE }}>
               <img
                 src={flagUrl}
-                alt={lang}
+                alt={language}
                 style={{ width: '100%', height: '100%' }}
               />
             </Avatar>
