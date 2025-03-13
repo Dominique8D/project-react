@@ -5,14 +5,12 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import AppHeaderLangSelector from './app-header-lang-selector';
-import { useLanguage } from '../context/language-context';
-import { useTranslation } from 'react-i18next';
+import useLangTranslation from '../custom-hooks/useLangTranslation';
 
 const pages = ["about"];
 
 const AppHeader = () => {
-  const { language } = useLanguage();
-  const { t } = useTranslation("common", { lng: language });
+  const { t } = useLangTranslation("common")
 
   return (
     <AppBar position="static">

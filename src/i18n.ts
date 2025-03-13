@@ -1,5 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { DutchLang } from "./utils/DutchLang";
+import { EnglishLang } from "./utils/EnglishLang";
 
 // https://react.i18next.com/guides/quick-start
 
@@ -7,27 +9,8 @@ import { initReactI18next } from "react-i18next";
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
-  nl: {
-    // If this one is used you don't need to pass a string to useTranslation first arg
-    translation: {
-      "title": "Project React NL"
-    },
-    common: {
-      "title": "Welkom op Project React NL",
-      "home": "Start",
-      "about": "Over mij"
-    }
-  },
-  gb: {
-    translation: {
-      "title": "Project React GB-EN"
-    },
-    common: {
-      "title": "Welcome to Project React GB-EN",
-      "home": "Home",
-      "about": "About"
-    }
-  }
+  nl: DutchLang,
+  gb: EnglishLang
 };
 
 i18n
