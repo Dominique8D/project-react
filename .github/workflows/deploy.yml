@@ -23,9 +23,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Debug Build Output
-        run: ls -la ./dist
-
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
