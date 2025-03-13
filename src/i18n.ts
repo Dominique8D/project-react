@@ -4,10 +4,6 @@ import { DutchLang } from "./utils/DutchLang";
 import { EnglishLang } from "./utils/EnglishLang";
 
 // https://react.i18next.com/guides/quick-start
-
-// the translations
-// (tip move them in a JSON file and import them,
-// or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
   nl: DutchLang,
   gb: EnglishLang
