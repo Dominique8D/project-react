@@ -26,7 +26,7 @@ const AppHeaderLangSelector = () => {
   };
 
   const { language, setLanguage } = useLanguage();
-  //const flagUrl = `https://cdn.simplelocalize.io/public/v1/flags/${language}.svg`;
+  const flagUrl = `https://cdn.simplelocalize.io/public/v1/flags/${language}.svg`;
 
   const handleLangChange = (selectedLang: string) => {
     setLanguage(selectedLang);
@@ -46,12 +46,11 @@ const AppHeaderLangSelector = () => {
             aria-expanded={open ? 'true' : undefined}
           >
             <Avatar sx={{ width: FLAG_SIZE, height: FLAG_SIZE }}>
-            {language}
-              {/* <img
+              <img
                 src={flagUrl}
                 alt={language}
                 style={{ width: '100%', height: '100%' }}
-              /> */}
+              />
             </Avatar>
           </IconButton>
         </Tooltip>
@@ -66,12 +65,11 @@ const AppHeaderLangSelector = () => {
       >
         {LANGUAGES.map((language) => (
           <MenuItem key={language} onClick={() => handleLangChange(language)}>
-            {language}
-            {/* <img
+            <img
               src={`https://cdn.simplelocalize.io/public/v1/flags/${language}.svg`}
               alt={language}
               style={{ width: FLAG_SIZE_MENU, height: FLAG_SIZE_MENU, marginRight: 8 }}
-            /> */}
+            />
             <Typography>{language.toUpperCase()}</Typography>
           </MenuItem>
         ))}
