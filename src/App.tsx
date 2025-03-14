@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="site-logo.png" className="App-logo" alt="logo"
-        />
+        <img src="site-logo.png" className="App-logo" alt="logo" />
         <p> {t('title')} </p>
       </header>
     </div>
