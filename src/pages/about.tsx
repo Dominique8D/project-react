@@ -1,9 +1,5 @@
 const AboutPage = () => {
-    return (
-        <>
-            TODO
-        </>
-    )
-}
+  return <>TODO</>;
+};
 
 export default AboutPage;
