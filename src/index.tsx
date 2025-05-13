@@ -1,26 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Page404 from './pages/page-404';
-import AppHeader from './components/app-header';
+import AppHeader from './components/app-header/app-header';
 import AboutPage from './pages/about';
 import { LanguageProvider } from './context/language-context';
+import { ThemeProviderWrapper } from './providers/theme-provider-wrapper';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <LanguageProvider>
-      <AppHeader />
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<App />}></Route>
-          <Route path='/about' element={<AboutPage />}></Route>
-          <Route path='*' element={<Page404 />}></Route>
-        </Routes>
-      </HashRouter>
+      <ThemeProviderWrapper>
+        <AppHeader />
+        <HashRouter>
+          <Routes>
+            <Route path='/' element={<App />}></Route>
+            <Route path='/about' element={<AboutPage />}></Route>
+            <Route path='*' element={<Page404 />}></Route>
+          </Routes>
+        </HashRouter>
+      </ThemeProviderWrapper>
     </LanguageProvider>
   </React.StrictMode>,
 );

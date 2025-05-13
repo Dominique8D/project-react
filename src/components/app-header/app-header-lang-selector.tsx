@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { Stack } from '@mui/material';
-import { useLanguage } from '../context/language-context';
+import { useLanguage } from '../../context/language-context';
 
 // Thanks SimplyLocalize
 // https://simplelocalize.io/blog/posts/hosted-flag-icons/

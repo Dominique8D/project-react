@@ -5,7 +5,8 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import AppHeaderLangSelector from './app-header-lang-selector';
-import useLangTranslation from '../custom-hooks/useLangTranslation';
+import useLangTranslation from '../../custom-hooks/useLangTranslation';
+import ThemeToggleButton from './app-header-theme-changer';
 
 const pages = ['about'];
 
@@ -17,7 +18,7 @@ const AppHeader = () => {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Stack direction='row' gap={1}>
-            <Button variant='contained' color='secondary' className='nav-link' href='#'>
+            <Button variant='contained' color='secondary' href='#'>
               {t('home')}
             </Button>
             {pages.map((page) => (
@@ -27,6 +28,7 @@ const AppHeader = () => {
             ))}
           </Stack>
           <AppHeaderLangSelector />
+          <ThemeToggleButton />
         </Toolbar>
       </Container>
     </AppBar>
