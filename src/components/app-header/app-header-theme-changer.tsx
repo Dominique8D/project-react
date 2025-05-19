@@ -10,7 +10,7 @@ const ThemeToggleButton = () => {
   return (
     <Stack>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <IconButton variant='contained' color='secondary' onClick={toggleTheme}>
+        <IconButton color='secondary' onClick={toggleTheme}>
           {isLightMode ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
       </Box>
