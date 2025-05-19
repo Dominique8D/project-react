@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import AppHeaderLangSelector from './app-header-lang-selector';
-import useLangTranslation from '../../custom-hooks/useLangTranslation';
+import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import ThemeToggleButton from './app-header-theme-changer';
 
 const pages = ['about'];

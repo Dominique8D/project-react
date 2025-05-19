@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { DutchLang } from './utils/DutchLang';
-import { EnglishLang } from './utils/EnglishLang';
+import { DutchLang } from './utils/dutch-lang';
+import { EnglishLang } from './utils/english-lang';
 
 // https://react.i18next.com/guides/quick-start
 const resources = {
