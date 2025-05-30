@@ -6,7 +6,9 @@ export type Post = {
 };
 
 const getFileUrl = (language: string, name: string): string => {
-  return `/blog/${language}/${name}.md`;
+  const isHostedFromGitHub = window.location.origin.includes('github.io');
+  const base = isHostedFromGitHub ? '/project-react' : '';
+  return `${base}/blog/${language}/${name}.md`;
 };
 
 export const getBlogPosts = (language: string): Post[] => {

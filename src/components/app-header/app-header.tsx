@@ -22,7 +22,7 @@ const AppHeader = () => {
               {t('home')}
             </Button>
             {pages.map((page) => (
-              <Button variant='outlined' color='secondary' href={`#/${page}`} key={page}>
+              <Button variant='contained' color='secondary' href={`#/${page}`} key={page}>
                 {t(page)}
               </Button>
             ))}
