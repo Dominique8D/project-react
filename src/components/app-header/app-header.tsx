@@ -8,7 +8,7 @@ import AppHeaderLangSelector from './app-header-lang-selector';
 import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import ThemeToggleButton from './app-header-theme-changer';
 
-const pages = ['about'];
+const pages = ['blog', 'about'];
 
 const AppHeader = () => {
   const { t } = useLangTranslation('common');

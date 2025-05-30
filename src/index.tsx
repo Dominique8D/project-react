@@ -8,6 +8,7 @@ import AppHeader from './components/app-header/app-header';
 import AboutPage from './pages/about';
 import { LanguageProvider } from './context/language-context';
 import { ThemeProviderWrapper } from './providers/theme-provider-wrapper';
+import BlogPage from './pages/blog';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <HashRouter>
           <Routes>
             <Route path='/' element={<App />}></Route>
+            <Route path='/blog' element={<BlogPage />}></Route>
             <Route path='/about' element={<AboutPage />}></Route>
             <Route path='*' element={<Page404 />}></Route>
           </Routes>

@@ -3,6 +3,7 @@ import useLangTranslation from './custom-hooks/use-lang-translation';
 import { Link, Stack } from '@mui/material';
 import { useLanguage } from './context/language-context';
 import { useThemeProvider } from './providers/theme-provider-wrapper';
+import PageLayout from './layout/page-layout';
 
 function App() {
   const { t } = useLangTranslation('common');
@@ -18,7 +19,7 @@ function App() {
   };
 
   return (
-    <Stack gap={2}>
+    <PageLayout>
       <h1> {t('title')}</h1>
       <Link href={linkPlusQueryParams('https://dominique8d.github.io/project-phaser/')}>
         https://dominique8d.github.io/project-phaser/
@@ -26,7 +27,7 @@ function App() {
       <Link href='https://dominique8d.github.io/project-vue/'>
         https://dominique8d.github.io/project-vue/
       </Link>
-    </Stack>
+    </PageLayout>
   );
 }
 

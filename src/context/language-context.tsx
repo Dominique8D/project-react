@@ -9,9 +9,14 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const PARAM_KEY = 'lang';
-const DEFAULT_LANG = 'nl';
+export const DEFAULT_LANG = 'nl';
 const VALID_LANGUAGES = ['nl', 'gb'];
+
+const PARAM_KEY = 'lang';
+
+export const isValidLanguage = (lang: string): boolean => {
+  return VALID_LANGUAGES.includes(lang);
+};
 
 const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const queryLang = getValidQueryParam(PARAM_KEY, VALID_LANGUAGES, DEFAULT_LANG);
