@@ -6,7 +6,7 @@ export type Post = {
 };
 
 const getFileUrl = (language: string, name: string): string => {
-  return `src/blog/${language}/${name}.md`;
+  return `/blog/${language}/${name}.md`;
 };
 
 export const getBlogPosts = (language: string): Post[] => {
