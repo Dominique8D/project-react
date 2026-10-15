@@ -1,0 +1,27 @@
+.markdown {
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  margin-block-start: 2em;
+  line-height: 1.25;
+}
+
+.markdown a {
+  color: var(--accent);
+}
+
+.markdown img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.error {
+  padding: 1rem;
+  border-inline-start: 0.25rem solid var(--accent);
+  background: var(--surface-raised);
+  color: var(--text);
+}

@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { Stack, Dialog, AppBar, Toolbar, IconButton, Typography } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { FC, useEffect, useRef } from 'react';
 import BlogPost from './blog-post';
 import { Post } from '../../utils/blog/blog-utils';
+import CloseIcon from '../../icons/close-icon';
+import styles from './blog-dialog.module.css';
 
 type BlogDialogProps = {
   handleClose: () => void;
@@ -11,24 +11,33 @@ type BlogDialogProps = {
 };
 
 const BlogDialog: FC<BlogDialogProps> = ({ handleClose, open, selectedPost }) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (open && dialog && !dialog.open) dialog.showModal();
+    if (!open && dialog?.open) dialog.close();
+  }, [open]);
+
   return (
-    <Stack>
-      {selectedPost && (
-        <Dialog fullScreen open={open} onClose={handleClose}>
-          <AppBar sx={{ position: 'relative' }}>
-            <Toolbar>
-              <IconButton color='inherit' onClick={handleClose} aria-label='close'>
-                <CloseIcon />
-              </IconButton>
-              <Typography variant='h6'>{selectedPost.title}</Typography>
-            </Toolbar>
-          </AppBar>
-          <Stack gap={1} spacing={1} p={1} m={1} sx={{ fontFamily: 'Tomorrow, sans-serif' }}>
-            <BlogPost file={selectedPost.file} />
-          </Stack>
-        </Dialog>
-      )}
-    </Stack>
+    selectedPost ? (
+      <dialog
+        ref={dialogRef}
+        className={styles.dialog}
+        aria-labelledby='blog-dialog-title'
+        onCancel={(event) => { event.preventDefault(); handleClose(); }}
+      >
+        <header className={styles.dialogHeader}>
+          <h2 id='blog-dialog-title'>{selectedPost.title}</h2>
+          <button className={styles.closeButton} type='button' onClick={handleClose} aria-label='Close'>
+            <CloseIcon />
+          </button>
+        </header>
+        <article className={styles.content}>
+          <BlogPost file={selectedPost.file} />
+        </article>
+      </dialog>
+    ) : null
   );
 };
 

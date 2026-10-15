@@ -1,20 +1,16 @@
-import { Stack, Box, IconButton } from '@mui/material';
 import { LIGHT, useThemeProvider } from '../../providers/theme-provider-wrapper';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import SunIcon from '../../icons/sun-icon';
+import MoonIcon from '../../icons/moon-icon';
+import styles from './app-header-theme-changer.module.css';
 
 const ThemeToggleButton = () => {
   const { toggleTheme, mode } = useThemeProvider();
   const isLightMode = mode === LIGHT;
 
   return (
-    <Stack>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <IconButton color='secondary' onClick={toggleTheme}>
-          {isLightMode ? <DarkModeIcon /> : <LightModeIcon />}
-        </IconButton>
-      </Box>
-    </Stack>
+    <button className={styles.themeButton} type='button' onClick={toggleTheme} aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} theme`}>
+      {isLightMode ? <MoonIcon /> : <SunIcon />}
+    </button>
   );
 };
 

@@ -1,0 +1,24 @@
+.about {
+  max-inline-size: 46rem;
+  padding-block-start: clamp(2rem, 8vh, 5rem);
+}
+
+.about h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vh, 4rem);
+  line-height: 1.15;
+}
+
+.about p:last-child {
+  max-inline-size: 58ch;
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.eyebrow {
+  color: var(--accent-green);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}

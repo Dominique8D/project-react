@@ -1,12 +1,7 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import { Stack } from '@mui/material';
 import AppHeaderLangSelector from './app-header-lang-selector';
 import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import ThemeToggleButton from './app-header-theme-changer';
+import styles from './app-header.module.css';
 
 const pages = ['blog', 'about'];
 
@@ -14,24 +9,20 @@ const AppHeader = () => {
   const { t } = useLangTranslation('common');
 
   return (
-    <AppBar position='static'>
-      <Container maxWidth='xl'>
-        <Toolbar disableGutters>
-          <Stack direction='row' gap={1}>
-            <Button variant='contained' color='secondary' href='#'>
-              {t('home')}
-            </Button>
-            {pages.map((page) => (
-              <Button variant='contained' color='secondary' href={`#/${page}`} key={page}>
-                {t(page)}
-              </Button>
-            ))}
-          </Stack>
+    <header className={styles.header}>
+      <div className={styles.inner}>
+        <a className={styles.brand} href='#/'>{t('home')}<span> / React</span></a>
+        <nav className={styles.navigation} aria-label={t('navigationLabel')}>
+          {pages.map((page) => (
+            <a className={styles.navLink} href={`#/${page}`} key={page}>{t(page)}</a>
+          ))}
+        </nav>
+        <div className={styles.controls}>
           <AppHeaderLangSelector />
           <ThemeToggleButton />
-        </Toolbar>
-      </Container>
-    </AppBar>
+        </div>
+      </div>
+    </header>
   );
 };
 

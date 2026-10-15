@@ -1,8 +1,8 @@
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
-import { Alert, Typography } from '@mui/material';
 import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import { getBaseForBlog } from '../../utils/blog/blog-utils';
+import styles from './blog-post.module.css';
 
 const BlogPost = ({ file }: { file: string }) => {
   const { t } = useLangTranslation('blog');
@@ -35,16 +35,9 @@ const BlogPost = ({ file }: { file: string }) => {
   );
 
   return (
-    <>
-      {hasError ? (
-        // @ts-ignore This works fine, not sure what MUI is complaining about
-        <Alert variant='filled' severity='error'>
-          <Typography>{t('error')}</Typography>
-        </Alert>
-      ) : (
-        <ReactMarkdown>{processedContent}</ReactMarkdown>
-      )}
-    </>
+    <div className={hasError ? styles.error : styles.markdown}>
+      {hasError ? <p role='alert'>{t('error')}</p> : <ReactMarkdown>{processedContent}</ReactMarkdown>}
+    </div>
   );
 };
 

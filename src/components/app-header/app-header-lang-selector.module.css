@@ -1,0 +1,32 @@
+.languagePicker {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-inline: 0.65rem;
+  border: 0.08rem solid var(--border);
+  border-radius: 0.25rem;
+  color: var(--text);
+}
+
+.languagePicker select {
+  max-inline-size: 8rem;
+  border: 0;
+  background: var(--surface-raised);
+  color: inherit;
+  color-scheme: inherit;
+  cursor: pointer;
+}
+
+.languagePicker option {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.label {
+  position: absolute;
+  inline-size: 0.0625rem;
+  block-size: 0.0625rem;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

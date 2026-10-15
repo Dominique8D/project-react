@@ -1,12 +1,11 @@
-import { Stack } from '@mui/material';
 import useLangTranslation from '../custom-hooks/use-lang-translation';
 import { useState } from 'react';
-
-import { Button } from '@mui/material';
 import BlogDialog from '../components/blog/blog-dialog';
 import { getBlogPosts, Post } from '../utils/blog/blog-utils';
 import PageLayout from '../layout/page-layout';
 import { useLanguage } from '../context/language-context';
+import AppButton from '../components/common/app-button';
+import styles from './blog.module.css';
 
 const BlogPage = () => {
   const { t } = useLangTranslation('blog');
@@ -30,13 +29,15 @@ const BlogPage = () => {
   return (
     <PageLayout>
       <h1>{t('title')}</h1>
-      {blogPosts.map((post) => (
-        <Stack key={post.title}>
-          <Button variant='outlined' onClick={() => openPost(post)}>
-            {post.title}
-          </Button>
-        </Stack>
-      ))}
+      <section className={styles.posts} aria-label={t('title')}>
+        {blogPosts.map((post, index) => (
+          <article className={styles.post} key={post.title}>
+            <span className={styles.postNumber}>{String(index + 1).padStart(2, '0')}</span>
+            <h2>{post.title}</h2>
+            <AppButton onClick={() => openPost(post)}>{t('read')}</AppButton>
+          </article>
+        ))}
+      </section>
       <BlogDialog selectedPost={selectedPost} open={open} handleClose={closePost} />
     </PageLayout>
   );

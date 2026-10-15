@@ -1,0 +1,36 @@
+.posts {
+  display: grid;
+  margin-block-start: 2rem;
+  border-block-start: 0.08rem solid var(--border);
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.25rem;
+  border-block-end: 0.08rem solid var(--border);
+}
+
+.post h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.postNumber {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 35rem) {
+  .post {
+    grid-template-columns: 2rem minmax(0, 1fr);
+  }
+
+  .post button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

@@ -1,13 +1,17 @@
-import { Stack } from '@mui/material';
 import PageLayout from '../layout/page-layout';
+import useLangTranslation from '../custom-hooks/use-lang-translation';
+import styles from './about.module.css';
 
 const AboutPage = () => {
+  const { t } = useLangTranslation('about');
+
   return (
     <PageLayout>
-      <Stack sx={{ height: '50%', width: '50%' }}>
-        <span>Image test</span>
-        <img src='site-logo.png' alt='logo' />
-      </Stack>
+      <section className={styles.about}>
+        <p className={styles.eyebrow}>Project React</p>
+        <h1>{t('title')}</h1>
+        <p>{t('description')}</p>
+      </section>
     </PageLayout>
   );
 };

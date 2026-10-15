@@ -1,0 +1,17 @@
+.themeButton,
+.closeButton {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 0.08rem solid var(--border);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.themeButton:hover,
+.closeButton:hover {
+  background: var(--surface);
+}

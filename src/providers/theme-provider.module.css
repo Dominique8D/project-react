@@ -1,0 +1,81 @@
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(html) {
+  min-block-size: 100%;
+  color-scheme: light dark;
+  font-family: 'Capriola', 'Tomorrow', 'Trebuchet MS', sans-serif;
+  scroll-behavior: smooth;
+}
+
+:global(body) {
+  min-inline-size: 20rem;
+  min-block-size: 100vh;
+  margin: 0;
+  background: Canvas;
+  color: CanvasText;
+}
+
+:global(button),
+:global(input),
+:global(select) {
+  font: inherit;
+}
+
+:global(button),
+:global(a),
+:global(select) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  --surface: oklch(98% 0.012 225);
+  --surface-raised: oklch(94% 0.022 220);
+  --text: oklch(24% 0.035 240);
+  --muted: oklch(43% 0.04 235);
+  --border: oklch(70% 0.035 230);
+  --accent: oklch(48% 0.19 255);
+  --accent-contrast: oklch(99% 0.008 225);
+  --accent-green: oklch(43% 0.15 153);
+  min-block-size: 100vh;
+  background: var(--surface);
+  color: var(--text);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.app[data-theme='light'] {
+  color-scheme: light;
+}
+
+.app[data-theme='dark'] {
+  color-scheme: dark;
+  --surface: oklch(18% 0.025 240);
+  --surface-raised: oklch(23% 0.032 235);
+  --text: oklch(94% 0.018 220);
+  --muted: oklch(76% 0.035 225);
+  --border: oklch(45% 0.04 230);
+  --accent: oklch(76% 0.14 250);
+  --accent-contrast: oklch(18% 0.025 240);
+  --accent-green: oklch(78% 0.15 153);
+}
+
+.app :global(h1) {
+  color: var(--accent);
+}
+
+:global(:focus-visible) {
+  outline: 0.18rem solid var(--accent);
+  outline-offset: 0.18rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

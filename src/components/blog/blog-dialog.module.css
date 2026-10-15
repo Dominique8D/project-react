@@ -1,0 +1,42 @@
+.dialog {
+  inline-size: min(100%, 64rem);
+  block-size: 100%;
+  max-inline-size: none;
+  max-block-size: none;
+  padding: 0;
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.dialog::backdrop {
+  background: color-mix(in srgb, CanvasText 58%, transparent);
+}
+
+.dialogHeader {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem max(1rem, calc((100% - 54rem) / 2));
+  border-block-end: 0.08rem solid var(--border);
+  background: var(--surface-raised);
+}
+
+.dialogHeader h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.closeButton {
+  flex: 0 0 auto;
+}
+
+.content {
+  max-inline-size: 56rem;
+  margin-inline: auto;
+  padding: 2rem 1rem 5rem;
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { getValidQueryParam } from '../utils/get-valid-query-param';
 import useUpdateQueryParam from '../custom-hooks/use-update-query-param';
 
@@ -22,6 +22,10 @@ const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const queryLang = getValidQueryParam(PARAM_KEY, VALID_LANGUAGES, DEFAULT_LANG);
   const [language, setLanguage] = useState(queryLang);
   useUpdateQueryParam(PARAM_KEY, language);
+
+  useEffect(() => {
+    document.documentElement.lang = language === 'gb' ? 'en-GB' : language;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
