@@ -35,6 +35,7 @@
   --text: oklch(24% 0.035 240);
   --muted: oklch(43% 0.04 235);
   --border: oklch(70% 0.035 230);
+  --main: oklch(48% 0.19 255);
   --accent: oklch(48% 0.19 255);
   --accent-contrast: oklch(99% 0.008 225);
   --accent-green: oklch(43% 0.15 153);
@@ -56,14 +57,29 @@
   --text: oklch(94% 0.018 220);
   --muted: oklch(76% 0.035 225);
   --border: oklch(45% 0.04 230);
+  --main: oklch(76% 0.14 250);
   --accent: oklch(76% 0.14 250);
   --accent-contrast: oklch(18% 0.025 240);
   --accent-green: oklch(78% 0.15 153);
   --error: oklch(76% 0.14 25);
 }
 
+.app[data-theme='custom'] {
+  color-scheme: dark;
+  --surface: var(--theme-background);
+  --surface-raised: var(--theme-surface-raised);
+  --text: var(--theme-text);
+  --muted: var(--theme-muted);
+  --border: var(--theme-border);
+  --main: var(--theme-main);
+  --accent: var(--theme-accent);
+  --accent-contrast: var(--theme-background);
+  --accent-green: var(--theme-green);
+  --error: var(--theme-error);
+}
+
 .app :global(h1) {
-  color: var(--accent);
+  color: var(--main);
 }
 
 :global(:focus-visible) {

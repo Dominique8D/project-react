@@ -5,10 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Page404 from './pages/page-404';
 import AppHeader from './components/app-header/app-header';
-import AboutPage from './pages/about';
 import { LanguageProvider } from './context/language-context';
 import { ThemeProviderWrapper } from './providers/theme-provider-wrapper';
 import BlogPage from './pages/blog';
+import SiteToolsPage from './pages/site-tools';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -20,7 +20,7 @@ root.render(
           <Routes>
             <Route path='/' element={<App />}></Route>
             <Route path='/blog' element={<BlogPage />}></Route>
-            <Route path='/about' element={<AboutPage />}></Route>
+            <Route path='/site-tools' element={<SiteToolsPage />}></Route>
             <Route path='*' element={<Page404 />}></Route>
           </Routes>
         </HashRouter>

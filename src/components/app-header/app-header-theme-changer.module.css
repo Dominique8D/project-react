@@ -1,17 +1,55 @@
-.themeButton,
-.closeButton {
+.picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.trigger {
   display: inline-grid;
   place-items: center;
-  inline-size: 2.75rem;
-  block-size: 2.75rem;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  padding: 0;
   border: 0.08rem solid var(--border);
   border-radius: 0.25rem;
-  background: transparent;
+  background: var(--surface-raised);
   color: var(--text);
   cursor: pointer;
 }
 
-.themeButton:hover,
-.closeButton:hover {
+.trigger:hover {
   background: var(--surface);
+}
+
+.list {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: calc(100% + 0.25rem);
+  z-index: 20;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 0.08rem solid var(--border);
+  border-radius: 0.25rem;
+  background: var(--surface);
+}
+
+.option {
+  display: grid;
+  place-items: center;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.option:hover,
+.option:focus-visible,
+.option[aria-selected='true'] {
+  background: var(--surface-raised);
+}
+
+.option[aria-selected='true'] {
+  color: var(--accent);
 }

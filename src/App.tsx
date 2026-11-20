@@ -23,7 +23,11 @@ function App() {
       <section className={styles.intro}>
         <p className={styles.eyebrow}>{t('introEyebrow')}</p>
         <h1>{t('title')}</h1>
-        <p className={styles.lead}>{t('description')}</p>
+        <p className={styles.lead}>
+          {t('description')}
+          <br />
+          {t('otherProjectsDescription')}
+        </p>
       </section>
       <section className={styles.projects} aria-label={t('projectsLabel')}>
         <a className={styles.project} href={linkPlusQueryParams('https://dominique8d.github.io/project-phaser/')}>

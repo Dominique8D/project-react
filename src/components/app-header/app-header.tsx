@@ -3,7 +3,10 @@ import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import ThemeToggleButton from './app-header-theme-changer';
 import styles from './app-header.module.css';
 
-const pages = ['blog', 'about'];
+const pages = [
+  { name: 'blog', path: 'blog' },
+  { name: 'siteTools', path: 'site-tools' },
+];
 
 const AppHeader = () => {
   const { t } = useLangTranslation('common');
@@ -14,7 +17,7 @@ const AppHeader = () => {
         <a className={styles.brand} href='#/'>{t('home')}<span> / React</span></a>
         <nav className={styles.navigation} aria-label={t('navigationLabel')}>
           {pages.map((page) => (
-            <a className={styles.navLink} href={`#/${page}`} key={page}>{t(page)}</a>
+            <a className={styles.navLink} href={`#/${page.path}`} key={page.path}>{t(page.name)}</a>
           ))}
         </nav>
         <div className={styles.controls}>
