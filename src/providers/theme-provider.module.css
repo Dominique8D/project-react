@@ -38,6 +38,7 @@
   --accent: oklch(48% 0.19 255);
   --accent-contrast: oklch(99% 0.008 225);
   --accent-green: oklch(43% 0.15 153);
+  --error: oklch(46% 0.19 25);
   min-block-size: 100vh;
   background: var(--surface);
   color: var(--text);
@@ -58,6 +59,7 @@
   --accent: oklch(76% 0.14 250);
   --accent-contrast: oklch(18% 0.025 240);
   --accent-green: oklch(78% 0.15 153);
+  --error: oklch(76% 0.14 25);
 }
 
 .app :global(h1) {

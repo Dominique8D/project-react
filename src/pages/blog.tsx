@@ -1,7 +1,7 @@
 import useLangTranslation from '../custom-hooks/use-lang-translation';
 import { useState } from 'react';
 import BlogDialog from '../components/blog/blog-dialog';
-import { getBlogPosts, Post } from '../utils/blog/blog-utils';
+import { formatPostDate, getBlogPosts, Post } from '../utils/blog/blog-utils';
 import PageLayout from '../layout/page-layout';
 import { useLanguage } from '../context/language-context';
 import AppButton from '../components/common/app-button';
@@ -31,9 +31,12 @@ const BlogPage = () => {
       <h1>{t('title')}</h1>
       <section className={styles.posts} aria-label={t('title')}>
         {blogPosts.map((post, index) => (
-          <article className={styles.post} key={post.title}>
+          <article className={styles.post} key={post.file}>
             <span className={styles.postNumber}>{String(index + 1).padStart(2, '0')}</span>
-            <h2>{post.title}</h2>
+            <div className={styles.postDetails}>
+              <h2>{t(post.titleKey)}</h2>
+              <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt, language)}</time>
+            </div>
             <AppButton onClick={() => openPost(post)}>{t('read')}</AppButton>
           </article>
         ))}

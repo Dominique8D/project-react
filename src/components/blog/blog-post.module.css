@@ -1,5 +1,9 @@
 .markdown {
-  line-height: 1.75;
+  max-inline-size: 70ch;
+  margin-inline: auto;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.8;
   overflow-wrap: anywhere;
 }
 
@@ -10,8 +14,56 @@
   line-height: 1.25;
 }
 
+.markdown h1 {
+  margin-block-start: 0;
+  padding-block-end: 0.5em;
+  border-block-end: 0.08rem solid var(--border);
+  color: var(--accent);
+}
+
+.markdown h2 {
+  color: var(--accent-green);
+}
+
+.markdown h3 {
+  color: var(--accent);
+}
+
 .markdown a {
   color: var(--accent);
+}
+
+.errorText {
+  color: var(--error);
+}
+
+.markdown :not(pre) > code {
+  padding: 0.08em 0.3em;
+  border: 0.05rem solid var(--border);
+  border-radius: 0.3rem;
+  background: var(--surface-raised);
+  color: var(--accent);
+}
+
+.markdown pre {
+  overflow-x: auto;
+  padding: 1em;
+  border-inline-start: 0.25rem solid var(--accent);
+  border-radius: 0.4rem;
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.markdown pre code {
+  color: inherit;
+}
+
+.markdown blockquote {
+  margin-inline: 0;
+  padding: 0.2em 1em;
+  border-inline-start: 0.25rem solid var(--accent-green);
+  background: var(--surface-raised);
+  color: var(--muted);
 }
 
 .markdown img {
@@ -21,7 +73,7 @@
 
 .error {
   padding: 1rem;
-  border-inline-start: 0.25rem solid var(--accent);
+  border-inline-start: 0.25rem solid var(--error);
   background: var(--surface-raised);
   color: var(--text);
 }

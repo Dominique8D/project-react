@@ -1,8 +1,20 @@
 import ReactMarkdown from 'react-markdown';
-import { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
+import type { Components } from 'react-markdown';
 import useLangTranslation from '../../custom-hooks/use-lang-translation';
 import { getBaseForBlog } from '../../utils/blog/blog-utils';
 import styles from './blog-post.module.css';
+
+const markdownComponents: Components = {
+  strong: ({ children }) => {
+    const text = Children.toArray(children)
+      .map((child) => (typeof child === 'string' ? child : ''))
+      .join('')
+      .trim();
+    const isError = /^(?:404(?:-fouten| errors?)?)$/i.test(text);
+    return <strong className={isError ? styles.errorText : undefined}>{children}</strong>;
+  },
+};
 
 const BlogPost = ({ file }: { file: string }) => {
   const { t } = useLangTranslation('blog');
@@ -36,7 +48,11 @@ const BlogPost = ({ file }: { file: string }) => {
 
   return (
     <div className={hasError ? styles.error : styles.markdown}>
-      {hasError ? <p role='alert'>{t('error')}</p> : <ReactMarkdown>{processedContent}</ReactMarkdown>}
+      {hasError ? (
+        <p role='alert'>{t('error')}</p>
+      ) : (
+        <ReactMarkdown components={markdownComponents}>{processedContent}</ReactMarkdown>
+      )}
     </div>
   );
 };

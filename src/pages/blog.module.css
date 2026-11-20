@@ -13,10 +13,17 @@
   border-block-end: 0.08rem solid var(--border);
 }
 
-.post h2 {
+.postDetails h2 {
   margin: 0;
   font-size: 1.25rem;
   overflow-wrap: anywhere;
+}
+
+.postDetails time {
+  display: block;
+  margin-block-start: 0.35rem;
+  color: var(--muted);
+  font-size: 0.875rem;
 }
 
 .postNumber {

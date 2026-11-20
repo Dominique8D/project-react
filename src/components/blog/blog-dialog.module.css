@@ -25,10 +25,17 @@
   background: var(--surface-raised);
 }
 
-.dialogHeader h2 {
+.dialogHeading h2 {
   margin: 0;
   font-size: 1.25rem;
   overflow-wrap: anywhere;
+}
+
+.dialogHeading time {
+  display: block;
+  margin-block-start: 0.25rem;
+  color: var(--muted);
+  font-size: 0.875rem;
 }
 
 .closeButton {

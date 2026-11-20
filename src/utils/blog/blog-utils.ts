@@ -1,8 +1,19 @@
 import { DEFAULT_LANG, isValidLanguage } from '../../context/language-context';
 
 export type Post = {
-  title: string;
+  titleKey: string;
   file: string;
+  publishedAt: string;
+};
+
+export const formatPostDate = (publishedAt: string, language: string): string => {
+  const locale = language === 'gb' ? 'en-GB' : 'nl-NL';
+  return new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(`${publishedAt}T00:00:00Z`));
 };
 
 export const getBaseForBlog = () => {
@@ -20,7 +31,15 @@ export const getBlogPosts = (language: string): Post[] => {
     lang = DEFAULT_LANG;
   }
   return [
-    { title: 'Early work', file: getFileUrl(language, 'early_work') },
-    { title: 'GB-EN only test', file: getFileUrl(language, 'eng_only') },
+    {
+      titleKey: 'posts.codespacesPages',
+      file: getFileUrl(lang, 'codespaces_pages'),
+      publishedAt: '2026-11-20',
+    },
+    {
+      titleKey: 'posts.languageErrorTest',
+      file: getFileUrl(lang, 'eng_only'),
+      publishedAt: '2025-05-30',
+    },
   ];
 };

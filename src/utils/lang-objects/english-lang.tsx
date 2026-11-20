@@ -18,9 +18,13 @@ export const EnglishLang = {
   },
   blog: {
     title: 'Blog',
-    read: 'Read article',
+    read: 'Read blog post',
     close: 'Close',
     error: 'There was a problem loading this post (do they really exist?)',
+    posts: {
+      codespacesPages: 'Publish a Vite website with GitHub Codespaces and GitHub Pages',
+      languageErrorTest: 'Language and error handling test (GB-EN only)',
+    },
   },
   about: {
     title: 'About this project',

@@ -1,6 +1,8 @@
 import { FC, useEffect, useRef } from 'react';
 import BlogPost from './blog-post';
-import { Post } from '../../utils/blog/blog-utils';
+import { formatPostDate, Post } from '../../utils/blog/blog-utils';
+import useLangTranslation from '../../custom-hooks/use-lang-translation';
+import { useLanguage } from '../../context/language-context';
 import CloseIcon from '../../icons/close-icon';
 import styles from './blog-dialog.module.css';
 
@@ -12,6 +14,8 @@ type BlogDialogProps = {
 
 const BlogDialog: FC<BlogDialogProps> = ({ handleClose, open, selectedPost }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const { t } = useLangTranslation('blog');
+  const { language } = useLanguage();
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -26,9 +30,17 @@ const BlogDialog: FC<BlogDialogProps> = ({ handleClose, open, selectedPost }) =>
         className={styles.dialog}
         aria-labelledby='blog-dialog-title'
         onCancel={(event) => { event.preventDefault(); handleClose(); }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) handleClose();
+        }}
       >
         <header className={styles.dialogHeader}>
-          <h2 id='blog-dialog-title'>{selectedPost.title}</h2>
+          <div className={styles.dialogHeading}>
+            <h2 id='blog-dialog-title'>{t(selectedPost.titleKey)}</h2>
+            <time dateTime={selectedPost.publishedAt}>
+              {formatPostDate(selectedPost.publishedAt, language)}
+            </time>
+          </div>
           <button className={styles.closeButton} type='button' onClick={handleClose} aria-label='Close'>
             <CloseIcon />
           </button>

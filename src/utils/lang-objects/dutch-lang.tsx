@@ -18,9 +18,13 @@ export const DutchLang = {
   },
   blog: {
     title: 'Blog',
-    read: 'Lees artikel',
+    read: 'Lees blogpost',
     close: 'Sluiten',
     error: 'Er was een probleem bij het laden van een post (bestaat hij wel echt?)',
+    posts: {
+      codespacesPages: 'Een Vite-website publiceren met GitHub Codespaces en GitHub Pages',
+      languageErrorTest: 'Taal- en foutafhandelingstest (alleen Engels)',
+    },
   },
   about: {
     title: 'Over dit project',

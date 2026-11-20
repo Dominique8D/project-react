@@ -25,6 +25,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "test:doc-links": "node --test scripts/check-doc-links.mjs",
     "deploy": "npm run build && npx gh-pages -d dist",
     "format": "prettier --write ."
   },
