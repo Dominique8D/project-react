@@ -13,7 +13,7 @@
 - Do not write as though you are the user or imply that the user authored an explanation or experience. Avoid first-person claims unless the user explicitly requests first-person copy.
 - If the user's intended meaning, terminology, or requirements are unclear, ask concise clarifying questions instead of guessing or inventing details.
 - Run `npm run test:doc-links` after adding or editing documentation links and periodically to check links in existing guides.
-- Write tutorials for the reader's project: use generic placeholders instead of the current user's repository values.
+- Use generic placeholders in tutorials by default; when the user asks for a concrete example, use the current repository's real values and label them as this project's example.
 - Introduce scripts and commands before referring to them, and state when the reader must add configuration rather than implying it already exists.
 - Order instructions in the sequence the reader will perform them; explain GitHub-managed workflows separately from command-line deployment tools.
 - Use official documentation titles in their original language. Bold key terms where helpful, but do not color every bold phrase.
