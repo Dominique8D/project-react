@@ -8,6 +8,10 @@ export const DutchLang = {
     languageLabel: 'Taal',
     languageDutch: 'Nederlands',
     languageEnglish: 'Engels',
+    languageSwitch: 'Taalkeuze',
+    currentLanguage: 'huidige taal',
+    switchToDarkTheme: 'Schakel naar donkere modus',
+    switchToLightTheme: 'Schakel naar lichte modus',
     introEyebrow: 'Portfolio / experimenten',
     description: 'Kleine projecten, gebouwd om nieuwe ideeën en technologieën te verkennen.',
     projectsLabel: 'Projecten',
@@ -22,6 +26,7 @@ export const DutchLang = {
     close: 'Sluiten',
     error: 'Er was een probleem bij het laden van een post (bestaat hij wel echt?)',
     posts: {
+      opencodeCodespaces: 'OpenCode gebruiken in GitHub Codespaces: setup, modellen en limieten',
       codespacesPages: 'Een Vite-website publiceren met GitHub Codespaces en GitHub Pages',
       languageErrorTest: 'Taal- en foutafhandelingstest (alleen Engels)',
     },

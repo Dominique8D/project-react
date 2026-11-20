@@ -1,6 +1,6 @@
-# Agent Guidelines
+# Project instructions
 
-- Read the relevant component, CSS Module, translations, and tests before making changes.
+- Read the relevant component, CSS Module, translations, and tests before changing code.
 - Do not use MUI or Emotion. Build UI with semantic HTML, CSS Modules, and existing shared components.
 - Do not add `px` units or standalone color literals. Use relative units and the central color tokens in `src/providers/theme-provider.module.css`.
 - Add visible copy to both Dutch and English translations.
@@ -17,3 +17,4 @@
 - Introduce scripts and commands before referring to them, and state when the reader must add configuration rather than implying it already exists.
 - Order instructions in the sequence the reader will perform them; explain GitHub-managed workflows separately from command-line deployment tools.
 - Use official documentation titles in their original language. Bold key terms where helpful, but do not color every bold phrase.
+- Consult `skills.md` and the matching OpenCode skill for task-specific workflows.

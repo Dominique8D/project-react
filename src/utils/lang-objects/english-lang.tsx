@@ -8,6 +8,10 @@ export const EnglishLang = {
     languageLabel: 'Language',
     languageDutch: 'Dutch',
     languageEnglish: 'English',
+    languageSwitch: 'Language switch',
+    currentLanguage: 'current language',
+    switchToDarkTheme: 'Switch to dark theme',
+    switchToLightTheme: 'Switch to light theme',
     introEyebrow: 'Portfolio / experiments',
     description: 'Small projects built to explore new ideas and technologies.',
     projectsLabel: 'Projects',
@@ -22,6 +26,7 @@ export const EnglishLang = {
     close: 'Close',
     error: 'There was a problem loading this post (do they really exist?)',
     posts: {
+      opencodeCodespaces: 'Using OpenCode in GitHub Codespaces: setup, models, and limits',
       codespacesPages: 'Publish a Vite website with GitHub Codespaces and GitHub Pages',
       languageErrorTest: 'Language and error handling test (GB-EN only)',
     },

@@ -32,6 +32,11 @@ export const getBlogPosts = (language: string): Post[] => {
   }
   return [
     {
+      titleKey: 'posts.opencodeCodespaces',
+      file: getFileUrl(lang, 'opencode_codespaces'),
+      publishedAt: '2026-11-20',
+    },
+    {
       titleKey: 'posts.codespacesPages',
       file: getFileUrl(lang, 'codespaces_pages'),
       publishedAt: '2026-11-20',

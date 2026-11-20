@@ -1,17 +1,3 @@
-# GitHub Codespaces ♥️ React
-
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
-
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
-
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
-
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
-
-## Available Scripts
-
-In the project directory, you can run:
-
 # Project React
 
 A bilingual React app with a portfolio homepage, blog, and about page. It uses Vite, React Router with hash-based routes, react-i18next, and CSS Modules.
@@ -24,6 +10,22 @@ npm start
 ```
 
 Vite runs at `http://localhost:3000/project-react/`.
+
+## OpenCode in GitHub Codespaces
+
+Start OpenCode from this project's Codespace terminal:
+
+```sh
+npm run opencode
+```
+
+On first use, connect a provider with `/connect` and choose a model with
+`/models`. The built-in Plan and Build agents are available through `/agents`
+or `Shift+Tab`.
+
+OpenCode reads project instructions from [AGENTS.md](./AGENTS.md) and task
+workflows from
+[.opencode/skills/project-workflows/SKILL.md](./.opencode/skills/project-workflows/SKILL.md).
 
 ## Checks
 
